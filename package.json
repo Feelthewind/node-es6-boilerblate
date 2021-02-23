@@ -8,7 +8,7 @@
     "clean": "rm -rf build && mkdir build",
     "build-babel": "babel -d ./build ./src -s",
     "build": "npm run clean && npm run build-babel",
-    "start": "npm run build && node ./build/index.js",
+    "start": "nodemon --exec npx babel-node -- src/index.js",
     "format": "prettier --write \"src/**/*.js\"",
     "format:check": "prettier --list-different \"src/**/*.js\"",
     "lint": "eslint \"src/**/*.js\"",
@@ -36,6 +36,7 @@
     "@babel/cli": "^7.13.0",
     "@babel/core": "^7.13.1",
     "@babel/preset-env": "^7.13.0",
+    "babel-node": "0.0.1-security",
     "eslint": "^6.2.1",
     "eslint-config-prettier": "^6.1.0",
     "eslint-plugin-prettier": "^3.1.0",
@@ -46,6 +47,7 @@
   "dependencies": {
     "@babel/node": "^7.13.0",
     "@uniswap/sdk": "^3.0.3",
-    "ethers": "^5.0.31"
+    "ethers": "^5.0.31",
+    "nodemon": "^2.0.7"
   }
 }
